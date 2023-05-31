@@ -80,6 +80,15 @@ input, button{outline: none;}
   .admine{
       top: 130px !important;
   }
+
+  /* .float{
+    align-items: center;
+    width: 49px;
+  } */
+
+  /* .sound_range {
+    transform: rotate(90deg);
+  } */
 }
 
 @media screen and (max-width: 424px) {

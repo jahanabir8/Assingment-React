@@ -24,7 +24,6 @@ function App() {
   const [close, setClose] = useState(false)
 
   const floatRef = useRef(null)
-  const userRef = useRef(null)
 
  
 
@@ -32,7 +31,6 @@ function App() {
   const [soundInc, setSoundInc] = useState(true)
 
   const [SideBar, setSideBar] = useState(false)
-  // const [sideCross, setSideCross] = useState(false)
 
 
   useEffect(()=>{
@@ -40,32 +38,15 @@ function App() {
 return()=>{
   document.removeEventListener("click", handleClickOutside)
 }
-
-
-
-// const handleClickOutside=(event)=>{
-  
-// if(floatRef.current && !floatRef.current.contains(event.target)){
-// console.log("cliked")
-// }
-// }
   },[])
   const handleClickOutside=(event)=>{
 if(floatRef.current && !floatRef.current.contains(event.target)){
 setClose(true)
-// setClicked(false)
 }
  }
 
-// const handleCloseUser =()=>{
-// if(clicked ){
-// setClicked(false)
-// }
-// }
-
 
   return (
-    // <div onClick={handleCloseUser}>
     <div >
       <main className="main__body" >
         <div className="admine  absolute top-[257px] flex">
@@ -211,11 +192,11 @@ setClose(true)
           </div>
         </div>
 
-        <div className="float__set absolute right-[0px] bottom-[30px]">
-          <div className={ Range?  "sound_range h-[48px] bg-[#000c] rounded-[5px] flex justify-center" : "hidden sound_range h-[48px] bg-[#000c] rounded-[5px] flex justify-center"}>
+        <div className="float__set flex flex-row items-center md:flex-col absolute right-[0px] bottom-[30px]">
+          <div className={ Range?  "sound_range h-[48px] md:w-[100%] bg-[#000c] rounded-[5px] flex justify-center" : "hidden sound_range h-[48px] bg-[#000c] rounded-[5px] flex justify-center"}>
             <input type="range" min="1" max="100" value="50" />
           </div>
-          <div className="float flex gap-[26px] p-[14px] bg-[#000c] w-[192px] ">
+          <div className="float flex flex-col md:flex-row gap-[26px] p-[14px] bg-[#000c] w-[50px] md:w-[192px] ">
             <img className="capture" src={camera} alt="icon" />
             <img className="square" src={fullscreen} alt="icon" />
             <span>
